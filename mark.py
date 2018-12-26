@@ -9,13 +9,15 @@ def solver1 (a,b,c):
         print(" Нет решения")
 def solver2 (a,b,c,d):
     n = 1
+    print("Найдем 1 корень с помощью схемы Горнера")
+    print('|', a, '|', b, '|', c, '|', d, '|')
     while n <= abs(d):
         if d % n == 0:
             a1 = a
             b1 = a1 * n + b
             c1 = b1 * n + c
             d1 = c1 * n + d
-            print(a1,' ',b1,' ',c1,' ',d1)
+            print('|', a1, '|', b1, '|', c1, '|', d1, '|')
             if d1 == 0:
                 print("Первый корень:  ", n)
                 D = b ** 2 - 4 * a * c
@@ -51,12 +53,5 @@ if n == 1:
 elif n == 2:
     
     print("Введите уравнение вида ax^3+bx^2+cx+d")
-    a = int(input())
-    
-    b = int(input())
-    
-    c = int(input())
-    
-    d = int(input())
-    
+    a,b,c,d = int(input()),int(input()),int(input()),int(input())
     solver2(a, b, c, d)
