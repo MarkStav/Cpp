@@ -15,6 +15,7 @@ def solver2 (a,b,c,d):
             b1 = a1 * n + b
             c1 = b1 * n + c
             d1 = c1 * n + d
+            print(a1,' ',b1,' ',c1,' ',d1)
             if d1 == 0:
                 print("Первый корень:  ", n)
                 D = b ** 2 - 4 * a * c
@@ -29,7 +30,7 @@ def solver2 (a,b,c,d):
             b1 = a1 * (-n) + b
             c1 = b1 * (-n) + c
             d1 = c1 * (-n) + d
-
+            
             if d1 == 0:
                 D = b ** 2 - 4 * a * c
                 if D > 0:
@@ -39,7 +40,7 @@ def solver2 (a,b,c,d):
                 else:
                     print(" Нет решения")
                 break
-    n += 1
+n += 1
 
 print("[1] - квадратное \n[2] - кубическое")
 n = int(input("Выберите уравнение для решения:   "))
@@ -48,10 +49,14 @@ if n == 1:
     a,b,c = int(input()), int(input()), int(input())
     solver1(a, b,   c)
 elif n == 2:
-
+    
     print("Введите уравнение вида ax^3+bx^2+cx+d")
     a = int(input())
+    
     b = int(input())
+    
     c = int(input())
+    
     d = int(input())
+    
     solver2(a, b, c, d)
