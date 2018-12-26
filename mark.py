@@ -39,6 +39,34 @@ def solver2(a, b, c, d):
 
 
 n += 1
+def solver3(a, b, c, d, e):
+    n = 1
+    print("Найдем 1 корень с помощью схемы Горнера")
+    print('|', a, '|', b, '|', c, '|', d, '|', e,'|')
+    while n <= abs(e):
+        if e % n == 0:
+            a1 = a
+            b1 = a1 * n + b
+            c1 = b1 * n + c
+            d1 = c1 * n + d
+            e1 = d1 * n + e
+            print('|', a1, '|', b1, '|', c1, '|', d1, '|', e,'|')
+            if e1 == 0:
+                print("Первый корень:  ", n)
+                solver2(a1, b1, c1, d1)
+                break
+            a1 = a
+            b1 = a1 * (-n) + b
+            c1 = b1 * (-n) + c
+            d1 = c1 * (-n) + d
+            e1 = d1 * (-n) + e
+            
+            if e1 == 0:
+                print("Первый корень:  ", n)
+                solver2(a1, b1, c1, d1)
+                break
+
+n += 1
 
 print("[1] - квадратное \n[2] - кубическое \n[3] - решение мнгочлена с 4 степенью")
 n = int(input("Выберите уравнение для решения:   "))
@@ -53,3 +81,4 @@ elif n == 2:
     solver2(a, b, c, d)
 elif n == 3:
     a,b,c,d,e = intInput(), intInput(), intInput(), intInput(), intInput()
+    solver3(a,b,c,d,e)
