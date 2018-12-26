@@ -20,13 +20,7 @@ def solver2 (a,b,c,d):
             print('|', a1, '|', b1, '|', c1, '|', d1, '|')
             if d1 == 0:
                 print("Первый корень:  ", n)
-                D = b ** 2 - 4 * a * c
-                if D > 0:
-                    print("Уравнение имеет 2 корня:  ", (- b + math.sqrt(D)) / 2 * a, ' ', (- b - math.sqrt(D)) / 2 * a)
-                elif D == 0:
-                    print("Уравнение имеет 1 корнь:   ", (- b + math.sqrt(D)) / 2 * a)
-                else:
-                    print(" Нет решения")
+                solver1(a1,b1,c1)
                 break
             a1 = a
             b1 = a1 * (-n) + b
@@ -34,13 +28,8 @@ def solver2 (a,b,c,d):
             d1 = c1 * (-n) + d
             
             if d1 == 0:
-                D = b ** 2 - 4 * a * c
-                if D > 0:
-                    print("Уравнение имеет 2 корня:  ", (- b + math.sqrt(D)) / 2 * a, ' ', (- b - math.sqrt(D)) / 2 * a)
-                elif D == 0:
-                    print("Уравнение имеет 1 корнь:   ", (- b + math.sqrt(D)) / 2 * a)
-                else:
-                    print(" Нет решения")
+                print("Первый корень:  ", n)
+                solver1(a1, b1, c1)
                 break
 n += 1
 
