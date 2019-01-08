@@ -1,8 +1,7 @@
 #include <stdio.h>
 /*
- * многострочный комент
+ * многострочный коментарий
  */
-
 int main(int argc, const char* argv[]) {
 
     printf("Hello, World!\n");
